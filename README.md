@@ -210,8 +210,10 @@ This work is based on and extends:
 
 ## 👤 Author
 
-**Csrahmoh**  
-Academic research project — 5G Network Slicing & QoS-Aware Routing  
+**Rahaf Almohammadi**
+**Elaf Qatan**
+**Rawan Saqar**
+MCs IOT and Robotics and Autunumance systems — 5G Network Slicing & QoS-Aware Routing  
 [GitHub](https://github.com/Csrahmoh/5gslicing)
 
 ---

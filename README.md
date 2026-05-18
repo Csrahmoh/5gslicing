@@ -1,4 +1,4 @@
-[README.md](https://github.com/user-attachments/files/27959603/README.md)
+[README (1).md](https://github.com/user-attachments/files/27959953/README.1.md)
 # 🛰️ QoS-Aware Backhaul Path Selection in 5G NR Network Slicing
 
 > **A Comparative Study of Dijkstra and A\* Heuristic Algorithms Under mMTC Congestion**
@@ -23,6 +23,33 @@ The simulation models three 5G slice types:
 | **mMTC** | Massive Machine-Type Comm. | Reliability + Energy |
 
 The core finding: **Dijkstra picks the shortest path. A\* picks the best QoS path.**
+
+---
+
+## 🖼️ Figures
+
+> Figures generated from the final simulation configuration.
+
+### Backhaul Topology
+
+```
+          ┌──── BH3 ────┐
+gNB ─── BH1               BH4 ─── BH6 ─── Core
+  │       └──[CONGESTED]──┘         │
+  └────── BH2 ────────── BH5 ───────┘
+```
+
+**Congested link:** `BH1 → BH4` — 85% utilization · 8% loss · 4 ms jitter
+
+### Algorithm Comparison
+
+| Property | Dijkstra | Modified A\* |
+|----------|----------|--------------|
+| Cost function | delay only | K0/ATR + K1·delay + K2·loss |
+| Heuristic | none | backward Dijkstra on delay |
+| Congestion-aware | ❌ | ✅ |
+| Path found under congestion | shortest delay | best QoS |
+| Nodes expanded (typical) | 4–7 | 7 |
 
 ---
 
@@ -208,12 +235,10 @@ This work is based on and extends:
 
 ---
 
-## 👤 Author
+## 👥 Authors
 
-**Rahaf Almohammadi**
-**Elaf Qatan**
-**Rawan Saqar**
-MCs IOT and Robotics and Autunumance systems — 5G Network Slicing & QoS-Aware Routing  
+**Rahaf Almohammadi** · **Elaf Qatan** · **Rawan Saqar**  
+MSc — IoT, Robotics & Autonomous Systems | 5G Network Slicing & QoS-Aware Routing  
 [GitHub](https://github.com/Csrahmoh/5gslicing)
 
 ---
